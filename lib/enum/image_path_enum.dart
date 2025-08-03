@@ -1,0 +1,9 @@
+enum ImagePathEnum {
+  GOOGLE_ICON,
+  APPLE_ICON,
+  FACEBOOK_ICON,
+  MAIL,
+  PASSWORD,
+  VISIBLE,
+  NAME,
+}
