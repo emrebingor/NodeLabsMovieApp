@@ -36,6 +36,24 @@ extension ImagePathEnumExtension on ImagePathEnum {
       case ImagePathEnum.PROFILE:
         _imagePath = _baseImagePath + _svgPath + 'ic_profile'.toSvg;
         break;
+      case ImagePathEnum.DIAMOND:
+        _imagePath = _baseImagePath + _svgPath + 'ic_diamond'.toSvg;
+        break;
+      case ImagePathEnum.UP_ARROW:
+        _imagePath = _baseImagePath + _pngPath + 'up_arrow_image'.toPng;
+        break;
+      case ImagePathEnum.HEART:
+        _imagePath = _baseImagePath + _pngPath + 'heart_image'.toPng;
+        break;
+      case ImagePathEnum.HEARTS:
+        _imagePath = _baseImagePath + _pngPath + 'hearts_image'.toPng;
+        break;
+      case ImagePathEnum.PREMIUM:
+        _imagePath = _baseImagePath + _pngPath + 'diamond_image'.toPng;
+        break;
+      case ImagePathEnum.LEFT_ARROW_ICON:
+        _imagePath = _baseImagePath + _svgPath + 'ic_arrow_left'.toSvg;
+        break;
     }
     return _imagePath;
   }

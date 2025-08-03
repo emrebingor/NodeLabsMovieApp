@@ -8,4 +8,10 @@ enum ImagePathEnum {
   NAME,
   HOME,
   PROFILE,
+  UP_ARROW,
+  PREMIUM,
+  LEFT_ARROW_ICON,
+  HEARTS,
+  HEART,
+  DIAMOND,
 }
