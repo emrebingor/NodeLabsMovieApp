@@ -21,7 +21,7 @@ final class MovieDetailBloc extends BaseBloc<MovieDetailAction, MovieDetailState
     emit(state.copyWith(isLoading: true));
 
     try {
-      final movieResponse = await _movieUseCase.addFavorite(event.id);
+      await _movieUseCase.addFavorite(event.id);
       emit(state.copyWith(
         isLoading: false,
         isFavoriteSelected: true,

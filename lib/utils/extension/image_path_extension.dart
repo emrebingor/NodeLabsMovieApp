@@ -60,6 +60,9 @@ extension ImagePathEnumExtension on ImagePathEnum {
       case ImagePathEnum.LIKE:
         _imagePath = _baseImagePath + _svgPath + 'ic_like'.toSvg;
         break;
+      case ImagePathEnum.PLUS_ICON:
+        _imagePath = _baseImagePath + _svgPath + 'ic_plus'.toSvg;
+        break;
     }
     return _imagePath;
   }

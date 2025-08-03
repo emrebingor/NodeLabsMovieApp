@@ -16,4 +16,5 @@ enum ImagePathEnum {
   DIAMOND,
   LIKE,
   DETAIL_ICON,
+  PLUS_ICON,
 }
