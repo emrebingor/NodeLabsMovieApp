@@ -1,4 +1,5 @@
 import 'package:node_labs_movie_app/screen/login/login_screen.dart';
+import 'package:node_labs_movie_app/screen/tab/tab_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'route_paths.dart';
@@ -9,6 +10,10 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: RoutePaths.login,
       builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: RoutePaths.tab,
+      builder: (context, state) => const TabScreen(),
     ),
   ],
   errorBuilder: (context, state) => Scaffold(
