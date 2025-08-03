@@ -30,6 +30,12 @@ extension ImagePathEnumExtension on ImagePathEnum {
       case ImagePathEnum.NAME:
         _imagePath = _baseImagePath + _svgPath + 'ic_name'.toSvg;
         break;
+      case ImagePathEnum.HOME:
+        _imagePath = _baseImagePath + _svgPath + 'ic_home'.toSvg;
+        break;
+      case ImagePathEnum.PROFILE:
+        _imagePath = _baseImagePath + _svgPath + 'ic_profile'.toSvg;
+        break;
     }
     return _imagePath;
   }

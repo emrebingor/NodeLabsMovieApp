@@ -6,4 +6,6 @@ enum ImagePathEnum {
   PASSWORD,
   VISIBLE,
   NAME,
+  HOME,
+  PROFILE,
 }
