@@ -24,7 +24,6 @@ mixin HomeScreenMixin on BaseViewState<HomeScreen> {
 
   void detailNavigation(Movies movie) {
     context.read<SelectedMovieProvider>().selectMovie(movie);
-
     context.push(RoutePaths.movieDetail);
   }
 }

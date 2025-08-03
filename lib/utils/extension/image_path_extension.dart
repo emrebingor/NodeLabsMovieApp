@@ -54,6 +54,12 @@ extension ImagePathEnumExtension on ImagePathEnum {
       case ImagePathEnum.LEFT_ARROW_ICON:
         _imagePath = _baseImagePath + _svgPath + 'ic_arrow_left'.toSvg;
         break;
+      case ImagePathEnum.DETAIL_ICON:
+        _imagePath = _baseImagePath + _svgPath + 'ic_detail'.toSvg;
+        break;
+      case ImagePathEnum.LIKE:
+        _imagePath = _baseImagePath + _svgPath + 'ic_like'.toSvg;
+        break;
     }
     return _imagePath;
   }

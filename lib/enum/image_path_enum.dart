@@ -14,4 +14,6 @@ enum ImagePathEnum {
   HEARTS,
   HEART,
   DIAMOND,
+  LIKE,
+  DETAIL_ICON,
 }
