@@ -1,0 +1,10 @@
+import 'package:node_labs_movie_app/data/repository/movie_repository.dart';
+import 'package:node_labs_movie_app/models/movie_response_model.dart';
+
+final class MovieUseCase {
+  final MovieRepository _repository;
+
+  MovieUseCase(this._repository);
+
+  Future<MovieResponseModel> getMovies() async => await _repository.getMovies();
+}

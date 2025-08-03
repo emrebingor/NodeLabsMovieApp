@@ -1,0 +1,58 @@
+import 'package:node_labs_movie_app/models/movie_response_model.dart';
+import 'package:flutter/material.dart';
+
+final class MovieInformationBoxWidget extends StatelessWidget {
+  const MovieInformationBoxWidget({super.key, required this.movie, required this.onTap});
+  final Movies movie;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final imageUrl = (movie.Poster ?? '').replaceFirst('http://', 'https://');
+    return InkWell(
+      onTap: onTap,
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Image.network(
+              imageUrl,
+              height: 216,
+              width: double.infinity,
+              fit: BoxFit.fill,
+              errorBuilder: (context, error, stackTrace) {
+                return const Icon(Icons.broken_image);
+              },
+            ),
+          ),
+
+          const SizedBox(height: 16),
+
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              movie.Title ?? '',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
+            ),
+          ),
+
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              movie.Director ?? '',
+              style: TextStyle(
+                color: Colors.white.withOpacity(0.5),
+                fontWeight: FontWeight.w500,
+                fontSize: 12,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
