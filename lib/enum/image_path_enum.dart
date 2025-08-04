@@ -17,4 +17,5 @@ enum ImagePathEnum {
   LIKE,
   DETAIL_ICON,
   PLUS_ICON,
+  SPLASH,
 }

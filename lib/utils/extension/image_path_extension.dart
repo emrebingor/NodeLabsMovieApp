@@ -48,6 +48,9 @@ extension ImagePathEnumExtension on ImagePathEnum {
       case ImagePathEnum.HEARTS:
         _imagePath = _baseImagePath + _pngPath + 'hearts_image'.toPng;
         break;
+      case ImagePathEnum.SPLASH:
+        _imagePath = _baseImagePath + _pngPath + 'sin_flix_splash'.toPng;
+        break;
       case ImagePathEnum.PREMIUM:
         _imagePath = _baseImagePath + _pngPath + 'diamond_image'.toPng;
         break;
