@@ -18,8 +18,12 @@ mixin HomeScreenMixin on BaseViewState<HomeScreen> {
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _homeBloc.add(const HomeInitAction());
+      _homeBloc.add(const HomeInitAction(false));
     });
+  }
+
+  void getMovies() {
+    homeBloc.add(HomeInitAction(true));
   }
 
   void detailNavigation(Movies movie) {

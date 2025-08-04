@@ -7,5 +7,6 @@ abstract class HomeAction {
 
 @immutable
 final class HomeInitAction extends HomeAction {
-  const HomeInitAction();
+  const HomeInitAction(this.isPagination);
+  final bool isPagination;
 }

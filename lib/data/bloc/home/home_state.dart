@@ -7,15 +7,24 @@ final class HomeState extends BaseBlocState {
     super.errorMessage,
     super.isLoading,
     this.movies,
+    this.totalPages = 1,
+    this.currentPage = 1,
+    this.hasMoreData = true,
   });
 
   final List<Movies>? movies;
+  final bool hasMoreData;
+  final int totalPages;
+  final int currentPage;
 
   @override
   List<Object?> get props {
     return <Object?>[
       ...super.props,
       movies,
+      hasMoreData,
+      totalPages,
+      currentPage,
     ];
   }
 
@@ -24,13 +33,19 @@ final class HomeState extends BaseBlocState {
     bool? hasError,
     String? errorMessage,
     bool? isLoading,
+    bool? hasMoreData,
     List<Movies>? movies,
+    int? totalPages,
+    int? currentPage,
   }) {
     return HomeState(
       hasError: hasError ?? false,
       errorMessage: errorMessage ?? '',
       isLoading: isLoading ?? this.isLoading,
       movies: movies ?? this.movies,
+      hasMoreData: hasMoreData ?? this.hasMoreData,
+      totalPages: totalPages ?? this.totalPages,
+      currentPage: currentPage ?? this.currentPage,
     );
   }
 }

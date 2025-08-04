@@ -11,11 +11,13 @@ final class MovieRepository {
 
   Future<MovieResponseModel> getMovies({
     int page = 1,
-    int limit = 10,
   }) async {
     try {
       final Response response = await networkManager.get(
         '/movie/list',
+        queryParameters: {
+          'page': page,
+        },
       );
 
       if (response.statusCode == 200 && response.data != null) {

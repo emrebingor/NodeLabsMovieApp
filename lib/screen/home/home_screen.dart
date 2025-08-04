@@ -6,8 +6,10 @@ import 'package:node_labs_movie_app/data/bloc/home/home_event.dart';
 import 'package:node_labs_movie_app/data/bloc/home/home_state.dart';
 import 'package:node_labs_movie_app/screen/home/mixin/home_screen_mixin.dart';
 import 'package:node_labs_movie_app/utils/extension/widget_extension.dart';
+import 'package:node_labs_movie_app/components/pagination_builder_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:node_labs_movie_app/models/movie_response_model.dart';
 
 final class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,33 +28,24 @@ final class _HomeScreenState extends BaseViewState<HomeScreen> with HomeScreenMi
         builder: (BuildContext context, HomeState state) {
           return Scaffold(
             body: SafeArea(
-              child: Column(
-                children: [
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: GridView.builder(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 15,
-                            childAspectRatio: 0.6,
-                          ),
-                          itemCount: state.movies?.length ?? 0,
-                          itemBuilder: (context, index) {
-                            final movie = state.movies?[index];
-                            return movie != null ? MovieInformationBoxWidget(
-                              movie: movie,
-                              onTap: () => detailNavigation(movie),
-                            ) : SizedBox.shrink();
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+              child: PaginationBuilder<Movies>(
+                source: state.movies ?? [],
+                isHaveMoreData: state.hasMoreData,
+                paginationCallback: () async {
+                  getMovies();
+                },
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                scroll: const BouncingScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 15,
+                  mainAxisSpacing: 15,
+                  childAspectRatio: 0.6,
+                ),
+                itemBuilder: (context, movie) => MovieInformationBoxWidget(
+                  movie: movie,
+                  onTap: () => detailNavigation(movie),
+                ),
               ),
             ),
           ).withLoading(state.isLoading);
@@ -60,4 +53,5 @@ final class _HomeScreenState extends BaseViewState<HomeScreen> with HomeScreenMi
       ),
     );
   }
+
 }

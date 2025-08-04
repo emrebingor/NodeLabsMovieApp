@@ -8,7 +8,12 @@ final class MovieUseCase {
 
   MovieUseCase(this._repository);
 
-  Future<MovieResponseModel> getMovies() async => await _repository.getMovies();
-  Future<FavoriteMovieResponseModel> getFavoriteMovies() async => await _repository.getFavoriteMovies();
-  Future<AddFavoriteResponseModel> addFavorite(String id) async => await _repository.addFavorite(id);
+  Future<MovieResponseModel> getMovies({int page = 1}) async =>
+      await _repository.getMovies(page: page);
+
+  Future<FavoriteMovieResponseModel> getFavoriteMovies() async =>
+      await _repository.getFavoriteMovies();
+
+  Future<AddFavoriteResponseModel> addFavorite(String id) async =>
+      await _repository.addFavorite(id);
 }

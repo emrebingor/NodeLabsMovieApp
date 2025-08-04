@@ -40,17 +40,17 @@ final class MovieInformationBoxWidget extends StatelessWidget {
             ),
           ),
 
-          Align(
+          movie.Director != null && movie.Director != 'N/A' ? Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              movie.Director ?? '',
+              movie.Director!,
               style: TextStyle(
                 color: Colors.white.withOpacity(0.5),
                 fontWeight: FontWeight.w500,
                 fontSize: 12,
               ),
             ),
-          ),
+          ) : SizedBox.shrink(),
         ],
       ),
     );
