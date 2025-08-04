@@ -21,11 +21,13 @@ final class ProfileDetailBloc extends BaseBloc<ProfileDetailAction, ProfileDetai
     emit(state.copyWith(isLoading: true));
 
     try {
-      await _userUseCase.uploadPhoto(state.selectedImage!);
-      emit(state.copyWith(
-        isLoading: false,
-        loginSuccess: true,
-      ));
+      if(state.selectedImage != null) {
+        await _userUseCase.uploadPhoto(state.selectedImage!);
+        emit(state.copyWith(
+          isLoading: false,
+          loginSuccess: true,
+        ));
+      }
     } catch (e) {
       emit(state.copyWith(isLoading: false, errorMessage: e.toString()));
     }
