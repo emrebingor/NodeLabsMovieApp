@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "637034567857",
+    "project_id": "nodelabsmovieapp",
+    "storage_bucket": "nodelabsmovieapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637034567857:android:88083a7e31962751456a90",
+        "android_client_info": {
+          "package_name": "com.example.node_labs_movie_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqAg2STxWTvPwsesIN0UufxK-NKYzUFnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
