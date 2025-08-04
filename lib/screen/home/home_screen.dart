@@ -28,21 +28,23 @@ final class _HomeScreenState extends BaseViewState<HomeScreen> with HomeScreenMi
       child: BlocConsumer<HomeBloc, HomeState>(
         listener: (BuildContext context, HomeState state) {},
         builder: (BuildContext context, HomeState state) {
-          return Scaffold(
-            body: SafeArea(
-              child: _MoviePaginationViewWidget(
-                movies: state.movies ?? [],
-                hasMoreData: state.hasMoreData,
-                paginationCallback: () async {
-                  getMovies();
-                },
-                onTap: (movie) => detailNavigation(movie),
+          return PopScope(
+            canPop: false,
+            child: Scaffold(
+              body: SafeArea(
+                child: _MoviePaginationViewWidget(
+                  movies: state.movies ?? [],
+                  hasMoreData: state.hasMoreData,
+                  paginationCallback: () async {
+                    getMovies();
+                  },
+                  onTap: (movie) => detailNavigation(movie),
+                ),
               ),
-            ),
-          ).withLoading(state.isLoading);
+            ).withLoading(state.isLoading),
+          );
         },
       ),
     );
   }
-
 }

@@ -33,43 +33,46 @@ final class _ProfileScreenState extends BaseViewState<ProfileScreen> with Profil
       child: BlocConsumer<ProfileBloc, ProfileState>(
           listener: listener,
           builder: (BuildContext context, ProfileState state) {
-            return Scaffold(
-              appBar: AppBarWidget(
-                title: "Profil Detayı",
-                isActionVisible: true,
-                isLeadingVisible: false,
-                actionOnTap: () {
-                  profileBloc.updateOfferSheetStatus(true);
-                },
-              ),
-              body: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 25),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _UserInformationRowWidget(
-                      user: state.userData,
-                      onTap: detailNavigation,
-                    ),
-
-                    const SizedBox(height: 29),
-
-                    Text(
-                      "Beğendiğim Filmler",
-                      style: TextStyle(
-                        color: ColorExtension.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-
-                    state.favoriteMovies?.isNotEmpty ?? false ? _FavoriteListWidget(
-                      movies: state.favoriteMovies,
-                    ) : _EmptyListWidget(),
-                  ],
+            return PopScope(
+              canPop: false,
+              child: Scaffold(
+                appBar: AppBarWidget(
+                  title: "Profil Detayı",
+                  isActionVisible: true,
+                  isLeadingVisible: false,
+                  actionOnTap: () {
+                    profileBloc.updateOfferSheetStatus(true);
+                  },
                 ),
-              ),
-            ).withLoading(state.isLoading);
+                body: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 25),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _UserInformationRowWidget(
+                        user: state.userData,
+                        onTap: detailNavigation,
+                      ),
+
+                      const SizedBox(height: 29),
+
+                      Text(
+                        "Beğendiğim Filmler",
+                        style: TextStyle(
+                          color: ColorExtension.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+
+                      state.favoriteMovies?.isNotEmpty ?? false ? _FavoriteListWidget(
+                        movies: state.favoriteMovies,
+                      ) : _EmptyListWidget(),
+                    ],
+                  ),
+                ),
+              ).withLoading(state.isLoading),
+            );
           }
       ),
     );

@@ -35,80 +35,83 @@ final class _LoginScreenState extends BaseViewState<LoginScreen> with LoginScree
       child: BlocConsumer<LoginBloc, LoginState>(
         listener: listener,
         builder: (BuildContext context, LoginState state) {
-          return Scaffold(
-            body: Center(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 39),
-                  child: Column(
-                    children: [
+          return PopScope(
+              canPop: false,
+              child: Scaffold(
+                body: Center(
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 39),
+                      child: Column(
+                        children: [
 
-                      TitleTextWidget(
-                        text: state.isRegister ? 'Hoşgeldiniz' : 'Merhabalar',
+                          TitleTextWidget(
+                            text: state.isRegister ? 'Hoşgeldiniz' : 'Merhabalar',
+                          ),
+
+                          DescriptionTextWidget(
+                            text: "Tempus varius a vitae interdum id tortor elementum tristique eleifend at.",
+                          ),
+
+                          const SizedBox(height: 40),
+
+                          state.isRegister ? TextFieldWidget(
+                            controller: fullNameController,
+                            hintText: 'Ad Soyad',
+                          ) : SizedBox.shrink(),
+
+                          state.isRegister ? const SizedBox(height: 14) : SizedBox.shrink(),
+
+                          EmailTextFieldWidget(controller: mailController),
+
+                          const SizedBox(height: 14),
+
+                          PasswordTextFieldWidget(
+                            controller: passwordController,
+                            hintText: 'Şifre',
+                            obscureText: state.obscureFirstPassword,
+                            visibleOnTap: updateObscureFirstPassword,
+                          ),
+
+                          state.isRegister ? const SizedBox(height: 14) : SizedBox.shrink(),
+
+                          state.isRegister ? PasswordTextFieldWidget(
+                            controller: secondPasswordController,
+                            hintText: 'Şifre Tekrar',
+                            obscureText: state.obscureSecondPassword,
+                            visibleOnTap: updateObscureSecondPassword,
+                          ) : SizedBox.shrink(),
+
+                          const SizedBox(height: 30),
+
+                          state.isRegister ? _RegisterInformationTextWidget()
+                              : _ForgotPasswordTextWidget(),
+
+                          const SizedBox(height: 24),
+
+                          ButtonWidget(
+                            onTap: state.isRegister ? registerUser : loginUser,
+                            title: state.isRegister ? 'Şimdi Kaydol' : 'Giriş Yap',
+                          ),
+
+                          const SizedBox(height: 37),
+
+                          _LoginTypeRowWidget(),
+
+                          const SizedBox(height: 32),
+
+                          _LoginRegisterInformationTextWidget(
+                            onTap: updateRegisterStatus,
+                            text: state.isRegister ? 'Zaten bir hesabın var mı?' : 'Bir hesabın yok mu? ',
+                            subText: state.isRegister ? ' Giriş Yap!' : ' Kayıt Ol!',
+                          ),
+                        ],
                       ),
-
-                      DescriptionTextWidget(
-                        text: "Tempus varius a vitae interdum id tortor elementum tristique eleifend at.",
-                      ),
-
-                      const SizedBox(height: 40),
-
-                      state.isRegister ? TextFieldWidget(
-                        controller: fullNameController,
-                        hintText: 'Ad Soyad',
-                      ) : SizedBox.shrink(),
-
-                      state.isRegister ? const SizedBox(height: 14) : SizedBox.shrink(),
-
-                      EmailTextFieldWidget(controller: mailController),
-
-                      const SizedBox(height: 14),
-
-                      PasswordTextFieldWidget(
-                        controller: passwordController,
-                        hintText: 'Şifre',
-                        obscureText: state.obscureFirstPassword,
-                        visibleOnTap: updateObscureFirstPassword,
-                      ),
-
-                      state.isRegister ? const SizedBox(height: 14) : SizedBox.shrink(),
-
-                      state.isRegister ? PasswordTextFieldWidget(
-                        controller: secondPasswordController,
-                        hintText: 'Şifre Tekrar',
-                        obscureText: state.obscureSecondPassword,
-                        visibleOnTap: updateObscureSecondPassword,
-                      ) : SizedBox.shrink(),
-
-                      const SizedBox(height: 30),
-
-                      state.isRegister ? _RegisterInformationTextWidget()
-                          : _ForgotPasswordTextWidget(),
-
-                      const SizedBox(height: 24),
-
-                      ButtonWidget(
-                        onTap: state.isRegister ? registerUser : loginUser,
-                        title: state.isRegister ? 'Şimdi Kaydol' : 'Giriş Yap',
-                      ),
-
-                      const SizedBox(height: 37),
-
-                      _LoginTypeRowWidget(),
-
-                      const SizedBox(height: 32),
-
-                      _LoginRegisterInformationTextWidget(
-                        onTap: updateRegisterStatus,
-                        text: state.isRegister ? 'Zaten bir hesabın var mı?' : 'Bir hesabın yok mu? ',
-                        subText: state.isRegister ? ' Giriş Yap!' : ' Kayıt Ol!',
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ),
-          ).withLoading(state.isLoading);
+              ).withLoading(state.isLoading)
+          );
         },
       ),
     );
