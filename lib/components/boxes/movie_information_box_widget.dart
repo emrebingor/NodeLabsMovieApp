@@ -1,5 +1,6 @@
 import 'package:node_labs_movie_app/models/movie_response_model.dart';
 import 'package:flutter/material.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 final class MovieInformationBoxWidget extends StatelessWidget {
   const MovieInformationBoxWidget({super.key, required this.movie, required this.onTap});
@@ -33,7 +34,7 @@ final class MovieInformationBoxWidget extends StatelessWidget {
             child: Text(
               movie.Title ?? '',
               style: TextStyle(
-                color: Colors.white,
+                color: ColorExtension.white,
                 fontWeight: FontWeight.w500,
                 fontSize: 12,
               ),
@@ -45,7 +46,7 @@ final class MovieInformationBoxWidget extends StatelessWidget {
             child: Text(
               movie.Director!,
               style: TextStyle(
-                color: Colors.white.withOpacity(0.5),
+                color: ColorExtension.white.withOpacity(0.5),
                 fontWeight: FontWeight.w500,
                 fontSize: 12,
               ),

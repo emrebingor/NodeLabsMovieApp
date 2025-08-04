@@ -33,7 +33,7 @@ final class _UserInformationRowWidget extends StatelessWidget {
               Text(
                 user?.name ?? '',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: ColorExtension.white,
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
@@ -44,7 +44,7 @@ final class _UserInformationRowWidget extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                  color: Colors.white.withOpacity(0.5),
+                  color: ColorExtension.white.withOpacity(0.5),
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
                 ),
@@ -61,13 +61,13 @@ final class _UserInformationRowWidget extends StatelessWidget {
             height: 36,
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 19),
             decoration: BoxDecoration(
-              color: Colors.red,
+              color: ColorExtension.red,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
               "Fotoğraf Ekle",
               style: TextStyle(
-                color: Colors.white,
+                color: ColorExtension.white,
                 fontSize: 13,
                 fontWeight: FontWeight.w700,
               ),

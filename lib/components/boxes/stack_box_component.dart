@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 final class StackBoxComponent extends StatelessWidget {
   const StackBoxComponent({
@@ -40,8 +41,8 @@ final class StackBoxComponent extends StatelessWidget {
                 Text(
                   discountedAmount,
                   style: TextStyle(
-                    color: Colors.white,
-                    decorationColor: Colors.white,
+                    color: ColorExtension.white,
+                    decorationColor: ColorExtension.white,
                     decoration: TextDecoration.lineThrough,
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
@@ -50,8 +51,8 @@ final class StackBoxComponent extends StatelessWidget {
                 Text(
                   amountCoin,
                   style: TextStyle(
-                    color: Colors.white,
-                    decorationColor: Colors.white,
+                    color: ColorExtension.white,
+                    decorationColor: ColorExtension.white,
                     fontSize: 25,
                     fontWeight: FontWeight.w900,
                   ),
@@ -59,8 +60,8 @@ final class StackBoxComponent extends StatelessWidget {
                 Text(
                   'Jeton',
                   style: TextStyle(
-                    color: Colors.white,
-                    decorationColor: Colors.white,
+                    color: ColorExtension.white,
+                    decorationColor: ColorExtension.white,
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
                   ),
@@ -69,8 +70,8 @@ final class StackBoxComponent extends StatelessWidget {
                 Text(
                   amountPrice,
                   style: TextStyle(
-                    color: Colors.white,
-                    decorationColor: Colors.white,
+                    color: ColorExtension.white,
+                    decorationColor: ColorExtension.white,
                     fontSize: 15,
                     fontWeight: FontWeight.w900,
                   ),
@@ -79,8 +80,8 @@ final class StackBoxComponent extends StatelessWidget {
                   'Başına haftalık',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.white,
-                    decorationColor: Colors.white,
+                    color: ColorExtension.white,
+                    decorationColor: ColorExtension.white,
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
                   ),
@@ -100,7 +101,7 @@ final class StackBoxComponent extends StatelessWidget {
               child: Text(
                 percentage,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: ColorExtension.white,
                 ),
               ),
             ),

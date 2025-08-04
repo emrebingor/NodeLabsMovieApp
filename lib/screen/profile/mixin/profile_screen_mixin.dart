@@ -7,6 +7,7 @@ import 'package:node_labs_movie_app/screen/offer/offer_screen.dart';
 import 'package:node_labs_movie_app/screen/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 mixin ProfileScreenMixin on BaseViewState<ProfileScreen> {
   final ProfileBloc _profileBloc = ProfileBloc();
@@ -36,7 +37,7 @@ mixin ProfileScreenMixin on BaseViewState<ProfileScreen> {
                 child: BackdropFilter(
                   filter: ImageFilter.blur(sigmaX: 6.0, sigmaY: 6.0),
                   child: Container(
-                    color: Colors.white.withOpacity(0.2),
+                    color: ColorExtension.white.withOpacity(0.2),
                   ),
                 ),
               ),

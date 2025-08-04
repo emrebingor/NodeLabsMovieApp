@@ -16,8 +16,8 @@ final class _ImageBoxWidget extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(70),
         decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.1),
-            border: Border.all(color: Colors.white.withOpacity(0.2)),
+            color: ColorExtension.white.withOpacity(0.1),
+            border: Border.all(color: ColorExtension.white.withOpacity(0.2)),
             borderRadius: BorderRadius.circular(31)
         ),
         child: selectedImage != null ? ClipRRect(

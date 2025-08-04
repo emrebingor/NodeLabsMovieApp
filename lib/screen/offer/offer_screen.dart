@@ -5,6 +5,7 @@ import 'package:node_labs_movie_app/components/text_widgets/description_text_wid
 import 'package:node_labs_movie_app/components/text_widgets/title_text_widget.dart';
 import 'package:node_labs_movie_app/enum/image_path_enum.dart';
 import 'package:flutter/material.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 final class OfferScreen extends StatelessWidget {
   const OfferScreen({super.key});
@@ -49,12 +50,12 @@ final class OfferScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20) + const EdgeInsets.only(top: 20, bottom: 15),
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.white.withOpacity(0.1)),
+              border: Border.all(color: ColorExtension.white.withOpacity(0.1)),
               borderRadius: BorderRadius.circular(8),
               gradient: LinearGradient(
                 colors: [
-                  Colors.white.withOpacity(0.1),
-                  Colors.white.withOpacity(0.1),
+                  ColorExtension.white.withOpacity(0.1),
+                  ColorExtension.white.withOpacity(0.1),
                 ],
               ),
             ),
@@ -63,7 +64,7 @@ final class OfferScreen extends StatelessWidget {
                 Text(
                   'Alacağınız Bonuslar',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: ColorExtension.white,
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
                   ),
@@ -86,7 +87,7 @@ final class OfferScreen extends StatelessWidget {
           Text(
             'Kilidi açmak için bir jeton paketi seçin',
             style: TextStyle(
-              color: Colors.white,
+              color: ColorExtension.white,
               fontSize: 15,
               fontWeight: FontWeight.w500,
             ),

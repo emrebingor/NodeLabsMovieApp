@@ -2,6 +2,7 @@ import 'package:node_labs_movie_app/enum/image_path_enum.dart';
 import 'package:node_labs_movie_app/utils/extension/image_path_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 final class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({super.key, required this.controller, required this.hintText});
@@ -29,12 +30,12 @@ final class TextFieldWidget extends StatelessWidget {
           Expanded(
             child: TextField(
               controller: controller,
-              style: const TextStyle(color: Colors.white),
-              cursorColor: Colors.white,
+              style: TextStyle(color: ColorExtension.white),
+              cursorColor: ColorExtension.white,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 hintText: hintText,
-                hintStyle: TextStyle(color: Colors.grey.shade400),
+                hintStyle: TextStyle(color: ColorExtension.grey),
                 border: InputBorder.none,
               ),
             ),

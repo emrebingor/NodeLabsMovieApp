@@ -59,7 +59,7 @@ final class _InformationRowWidget extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
-                      color: Colors.white,
+                      color: ColorExtension.white,
                     ),
                   ),
 
@@ -70,12 +70,12 @@ final class _InformationRowWidget extends StatelessWidget {
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 5),
                       decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white.withOpacity(0.3)),
+                          border: Border.all(color: ColorExtension.white.withOpacity(0.3)),
                           borderRadius: BorderRadius.circular(12)
                       ),
                       child: SvgPicture.asset(
                         ImagePathEnum.LIKE.getImagePath,
-                        color: isFavoriteSelected ? Colors.red : Colors.white,
+                        color: isFavoriteSelected ? ColorExtension.red : ColorExtension.white,
                       ),
                     ),
                   ),
@@ -87,7 +87,7 @@ final class _InformationRowWidget extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 13,
-                  color: Colors.white.withOpacity(0.75),
+                  color: ColorExtension.white.withOpacity(0.75),
                 ),
               ),
             ],

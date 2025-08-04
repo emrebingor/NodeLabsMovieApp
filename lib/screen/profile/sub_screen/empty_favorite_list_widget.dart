@@ -12,13 +12,13 @@ final class _EmptyListWidget extends StatelessWidget {
           SizedBox(
             height: 50,
             width: 50,
-            child: Icon(Icons.movie, color: Colors.white),
+            child: Icon(Icons.movie, color: ColorExtension.white),
           ),
           Text(
             'Favorilerinizden film yok lütfen film ekleyiniz.',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.white,
+              color: ColorExtension.white,
               fontSize: 16,
               fontWeight: FontWeight.w600,
             ),

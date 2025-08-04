@@ -2,6 +2,7 @@ import 'package:node_labs_movie_app/enum/image_path_enum.dart';
 import 'package:node_labs_movie_app/utils/extension/image_path_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 final class CustomBottomNavBar extends StatelessWidget {
   final int selectedIndex;
@@ -87,7 +88,7 @@ final class _NavItem extends StatelessWidget {
             Text(
               label,
               style: TextStyle(
-                color: Colors.white,
+                color: ColorExtension.white,
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
               ),

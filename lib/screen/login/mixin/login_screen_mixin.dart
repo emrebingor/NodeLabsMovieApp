@@ -6,6 +6,7 @@ import 'package:node_labs_movie_app/data/bloc/login/login_state.dart';
 import 'package:node_labs_movie_app/screen/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 mixin LoginScreenMixin on BaseViewState<LoginScreen> {
   final LoginBloc _loginBloc = LoginBloc();
@@ -112,7 +113,7 @@ mixin LoginScreenMixin on BaseViewState<LoginScreen> {
 
     final snackBar = SnackBar(
       content: Text(message),
-      backgroundColor: Colors.red,
+      backgroundColor: ColorExtension.red,
       behavior: SnackBarBehavior.floating,
       margin: const EdgeInsets.only(
         top: kToolbarHeight + 20,

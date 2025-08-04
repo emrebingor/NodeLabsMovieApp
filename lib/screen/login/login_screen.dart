@@ -16,6 +16,7 @@ import 'package:node_labs_movie_app/data/bloc/login/login_state.dart';
 import 'package:node_labs_movie_app/screen/login/mixin/login_screen_mixin.dart';
 import 'package:node_labs_movie_app/utils/extension/widget_extension.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 part './sub_screen/login_sub_screen.dart';
 

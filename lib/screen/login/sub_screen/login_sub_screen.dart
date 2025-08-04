@@ -35,16 +35,16 @@ final class _LoginRegisterInformationTextWidget extends StatelessWidget {
             text: text,
             style: TextStyle(
               fontSize: 12,
-              color: Colors.white.withOpacity(0.5),
+              color: ColorExtension.white.withOpacity(0.5),
               fontWeight: FontWeight.w400,
             ),
           ),
 
           TextSpan(
             text: subText,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 12,
-              color: Colors.white,
+              color: ColorExtension.white,
               fontWeight: FontWeight.w400,
             ),
             recognizer: TapGestureRecognizer()..onTap = () {
@@ -70,17 +70,17 @@ final class _RegisterInformationTextWidget extends StatelessWidget {
             text: 'Kullanıcı sözleşmesini ',
             style: TextStyle(
               fontSize: 12,
-              color: Colors.white.withOpacity(0.5),
+              color: ColorExtension.white.withOpacity(0.5),
               fontWeight: FontWeight.w400,
             ),
           ),
           TextSpan(
             text: 'okudum ve kabul ediyorum.',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 12,
               decoration: TextDecoration.underline,
-              decorationColor: Colors.white,
-              color: Colors.white,
+              decorationColor: ColorExtension.white,
+              color: ColorExtension.white,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -88,7 +88,7 @@ final class _RegisterInformationTextWidget extends StatelessWidget {
             text: ' Bu sözleşmeyi okuyarak devam ediniz lütfen.',
             style: TextStyle(
               fontSize: 12,
-              color: Colors.white.withOpacity(0.5),
+              color: ColorExtension.white.withOpacity(0.5),
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -109,10 +109,10 @@ final class _ForgotPasswordTextWidget extends StatelessWidget {
         'Şifremi unuttum',
         style: TextStyle(
           decoration: TextDecoration.underline,
-          decorationColor: Colors.white,
+          decorationColor: ColorExtension.white,
           decorationThickness: 2,
           fontSize: 12,
-          color: Colors.white,
+          color: ColorExtension.white,
         ),
       ),
     );

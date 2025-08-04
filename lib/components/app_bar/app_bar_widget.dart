@@ -3,6 +3,7 @@ import 'package:node_labs_movie_app/utils/extension/image_path_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 final class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
   const AppBarWidget({super.key, required this.title, this.isActionVisible, this.actionOnTap, this.isLeadingVisible});
@@ -23,7 +24,7 @@ final class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
         child: Padding(
           padding: const EdgeInsets.all(5),
           child: CircleAvatar(
-            backgroundColor: Colors.white.withOpacity(0.1),
+            backgroundColor: ColorExtension.white.withOpacity(0.1),
             child: SvgPicture.asset(ImagePathEnum.LEFT_ARROW_ICON.getImagePath),
           ),
         ),
@@ -32,7 +33,7 @@ final class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
         title,
         style:
         TextStyle(
-          color: Colors.white,
+          color: ColorExtension.white,
           fontSize: 15,
           fontWeight: FontWeight.w500,
         ),
@@ -44,7 +45,7 @@ final class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
             margin: const EdgeInsets.only(right: 16),
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-                color: Colors.red,
+                color: ColorExtension.red,
                 borderRadius: BorderRadius.circular(53)
             ),
             child: Row(
@@ -54,7 +55,7 @@ final class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
                 Text(
                   "Sınırlı Teklif",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: ColorExtension.white,
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                   ),

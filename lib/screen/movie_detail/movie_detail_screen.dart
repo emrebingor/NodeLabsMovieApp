@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:node_labs_movie_app/models/movie_response_model.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 part './sub_screen/movie_detail_sub_screen.dart';
 

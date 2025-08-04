@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 typedef PaginatedIndexBuilder<T extends Object> = Widget Function(BuildContext context, T item);
 
@@ -56,7 +57,7 @@ class _CircularProgressIndicator extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: Center(
         child: CircularProgressIndicator(
-          color: Colors.white,
+          color: ColorExtension.white,
         ),
       ),
     );

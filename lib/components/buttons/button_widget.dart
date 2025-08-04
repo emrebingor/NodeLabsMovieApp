@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 final class ButtonWidget extends StatelessWidget {
   const ButtonWidget({super.key, required this.onTap, required this.title});
@@ -14,7 +15,7 @@ final class ButtonWidget extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 17),
         decoration: BoxDecoration(
-            color: Colors.red,
+            color: ColorExtension.red,
             borderRadius: BorderRadius.circular(18)
         ),
         child: Text(
@@ -22,7 +23,7 @@ final class ButtonWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w500,
-            color: Colors.white,
+            color: ColorExtension.white,
           ),
         ),
       ),

@@ -12,6 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:node_labs_movie_app/models/register_response_model.dart';
 import 'package:node_labs_movie_app/models/favorite_movie_response_model.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 part './sub_screen/user_information_widget.dart';
 part './sub_screen/empty_favorite_list_widget.dart';
@@ -55,7 +56,7 @@ final class _ProfileScreenState extends BaseViewState<ProfileScreen> with Profil
                     Text(
                       "Beğendiğim Filmler",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: ColorExtension.white,
                         fontSize: 15,
                         fontWeight: FontWeight.w500,
                       ),

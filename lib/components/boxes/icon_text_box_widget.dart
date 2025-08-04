@@ -1,6 +1,7 @@
 import 'package:node_labs_movie_app/enum/image_path_enum.dart';
 import 'package:node_labs_movie_app/utils/extension/image_path_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 final class IconTextBoxWidget extends StatelessWidget {
   const IconTextBoxWidget({super.key, required this.title, required this.icon});
@@ -27,7 +28,7 @@ final class IconTextBoxWidget extends StatelessWidget {
             style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
-                color: Colors.white
+                color: ColorExtension.white
             ),
           )
         ],

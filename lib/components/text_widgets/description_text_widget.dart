@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 final class DescriptionTextWidget extends StatelessWidget {
   const DescriptionTextWidget({super.key, required this.text});
@@ -13,7 +14,7 @@ final class DescriptionTextWidget extends StatelessWidget {
         decoration: TextDecoration.underline,
         fontSize: 13,
         fontWeight: FontWeight.w400,
-        color: Colors.white,
+        color: ColorExtension.white,
       ),
     );
   }

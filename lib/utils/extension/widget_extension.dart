@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 extension WidgetExtension on Widget {
   Widget withLoading(bool isLoading) {
@@ -11,7 +12,7 @@ extension WidgetExtension on Widget {
             backgroundColor: Colors.black,
             body: Center(
               child: CircularProgressIndicator(
-                color: Colors.white,
+                color: ColorExtension.white,
               ),
             ),
           ) : const SizedBox.shrink(),
