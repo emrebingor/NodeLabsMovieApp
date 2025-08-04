@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:node_labs_movie_app/models/movie_response_model.dart';
 
 typedef PaginatedIndexBuilder<T extends Object> = Widget Function(BuildContext context, T item);
 

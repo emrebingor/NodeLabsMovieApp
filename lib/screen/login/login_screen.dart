@@ -17,6 +17,8 @@ import 'package:node_labs_movie_app/screen/login/mixin/login_screen_mixin.dart';
 import 'package:node_labs_movie_app/utils/extension/widget_extension.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+part './sub_screen/login_sub_screen.dart';
+
 final class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -39,9 +41,11 @@ final class _LoginScreenState extends BaseViewState<LoginScreen> with LoginScree
                     padding: const EdgeInsets.symmetric(horizontal: 39),
                     child: Column(
                       children: [
+
                         TitleTextWidget(
                           text: state.isRegister ? 'Hoşgeldiniz' : 'Merhabalar',
                         ),
+
                         DescriptionTextWidget(
                           text: "Tempus varius a vitae interdum id tortor elementum tristique eleifend at.",
                         ),
@@ -77,104 +81,26 @@ final class _LoginScreenState extends BaseViewState<LoginScreen> with LoginScree
 
                         const SizedBox(height: 30),
 
-                        state.isRegister ? RichText(
-                          text: TextSpan(
-                            style: const TextStyle(color: Colors.black, fontSize: 16),
-                            children: [
-                              TextSpan(
-                                text: 'Kullanıcı sözleşmesini ',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white.withOpacity(0.5),
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              TextSpan(
-                                text: 'okudum ve kabul ediyorum.',
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  decoration: TextDecoration.underline,
-                                  decorationColor: Colors.white,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                                recognizer: TapGestureRecognizer()..onTap = () {
-                                  updateRegisterStatus();
-                                },
-                              ),
-                              TextSpan(
-                                text: ' Bu sözleşmeyi okuyarak devam ediniz lütfen.',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white.withOpacity(0.5),
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ) : Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Şifremi unuttum',
-                            style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              decorationColor: Colors.white,
-                              decorationThickness: 2,
-                              fontSize: 12,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                        state.isRegister ? _RegisterInformationTextWidget()
+                            : _ForgotPasswordTextWidget(),
 
                         const SizedBox(height: 24),
 
                         ButtonWidget(
-                          onTap: () {
-                            state.isRegister ? registerUser() : loginUser();
-                          },
+                          onTap: state.isRegister ? registerUser : loginUser,
                           title: state.isRegister ? 'Şimdi Kaydol' : 'Giriş Yap',
                         ),
 
                         const SizedBox(height: 37),
 
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            IconBoxWidget(icon: ImagePathEnum.GOOGLE_ICON),
-                            const SizedBox(width: 8),
-                            IconBoxWidget(icon: ImagePathEnum.APPLE_ICON),
-                            const SizedBox(width: 8),
-                            IconBoxWidget(icon: ImagePathEnum.FACEBOOK_ICON),
-                          ],
-                        ),
+                        _LoginTypeRowWidget(),
 
                         const SizedBox(height: 32),
 
-                        RichText(
-                          text: TextSpan(
-                            style: const TextStyle(color: Colors.black, fontSize: 16),
-                            children: [
-                              TextSpan(
-                                text: state.isRegister ? 'Zaten bir hesabın var mı?' : 'Bir hesabın yok mu? ',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white.withOpacity(0.5),
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              TextSpan(
-                                text: state.isRegister ? ' Giriş Yap!' : ' Kayıt Ol!',
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                                recognizer: TapGestureRecognizer()..onTap = () {
-                                  updateRegisterStatus();
-                                },
-                              ),
-                            ],
-                          ),
+                        _LoginRegisterInformationTextWidget(
+                          onTap: updateRegisterStatus,
+                          text: state.isRegister ? 'Zaten bir hesabın var mı?' : 'Bir hesabın yok mu? ',
+                          subText: state.isRegister ? ' Giriş Yap!' : ' Kayıt Ol!',
                         ),
                       ],
                     ),
