@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:node_labs_movie_app/components/app_bar/app_bar_widget.dart';
 import 'package:node_labs_movie_app/components/buttons/button_widget.dart';
 import 'package:node_labs_movie_app/components/text_widgets/description_text_widget.dart';
@@ -14,6 +15,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+part './sub_screen/profile_detail_sub_screen.dart';
+
 final class ProfileDetailScreen extends StatefulWidget {
   const ProfileDetailScreen({super.key});
 
@@ -22,16 +25,12 @@ final class ProfileDetailScreen extends StatefulWidget {
 }
 
 final class _ProfileDetailScreenState extends BaseViewState<ProfileDetailScreen> with ProfileDetailScreenMixin {
-
   @override
   Widget build(BuildContext context) {
-
     return BaseView<ProfileDetailBloc, ProfileDetailAction, ProfileDetailState>(
       blocModel: profileDetailBloc,
       child: BlocConsumer<ProfileDetailBloc, ProfileDetailState>(
-        listener: (BuildContext context, ProfileDetailState state) {
-
-        },
+        listener: (BuildContext context, ProfileDetailState state) {},
         builder: (BuildContext context, ProfileDetailState state) {
           return Scaffold(
             appBar: AppBarWidget(title: 'Profil Detayı'),
@@ -42,31 +41,18 @@ final class _ProfileDetailScreenState extends BaseViewState<ProfileDetailScreen>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+
                     TitleTextWidget(text: "Fotoğraflarınızı Yükleyin"),
+
                     const SizedBox(height: 8),
+
                     DescriptionTextWidget(text: "Resources out incentivize\n relaxation floor loss cc."),
+
                     const SizedBox(height: 48),
 
-                    InkWell(
+                    _ImageBoxWidget(
+                      selectedImage: state.selectedImage,
                       onTap: pickImage,
-                      child: Container(
-                        padding: const EdgeInsets.all(70),
-                        decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.1),
-                            border: Border.all(color: Colors.white.withOpacity(0.2)),
-                            borderRadius: BorderRadius.circular(31)
-                        ),
-                        child: state.selectedImage != null
-                            ? ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Image.file(
-                            state.selectedImage!,
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.cover,
-                          ),
-                        ) : SvgPicture.asset(ImagePathEnum.PLUS_ICON.getImagePath),
-                      ),
                     ),
 
                     Spacer(),
