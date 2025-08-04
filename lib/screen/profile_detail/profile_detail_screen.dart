@@ -31,7 +31,7 @@ final class _ProfileDetailScreenState extends BaseViewState<ProfileDetailScreen>
     return BaseView<ProfileDetailBloc, ProfileDetailAction, ProfileDetailState>(
       blocModel: profileDetailBloc,
       child: BlocConsumer<ProfileDetailBloc, ProfileDetailState>(
-        listener: (BuildContext context, ProfileDetailState state) {},
+        listener: listener,
         builder: (BuildContext context, ProfileDetailState state) {
           return Scaffold(
             appBar: AppBarWidget(title: 'Profil Detayı'),

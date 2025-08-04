@@ -5,6 +5,8 @@ import 'package:node_labs_movie_app/data/bloc/profile_detail/profile_detail_even
 import 'package:node_labs_movie_app/screen/profile_detail/profile_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:go_router/go_router.dart';
+import 'package:node_labs_movie_app/data/bloc/profile_detail/profile_detail_state.dart';
 
 mixin ProfileDetailScreenMixin on BaseViewState<ProfileDetailScreen> {
   final ProfileDetailBloc _profileDetailBloc = ProfileDetailBloc();
@@ -16,6 +18,12 @@ mixin ProfileDetailScreenMixin on BaseViewState<ProfileDetailScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {});
+  }
+
+  Future<void> listener(BuildContext context, ProfileDetailState state) async {
+    if (state.loginSuccess) {
+      context.pop();
+    }
   }
 
   void updateSelectedPhoto() {

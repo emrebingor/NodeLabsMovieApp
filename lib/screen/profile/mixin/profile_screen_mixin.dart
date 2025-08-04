@@ -8,6 +8,7 @@ import 'package:node_labs_movie_app/screen/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
+import 'package:node_labs_movie_app/core/navigation/route_paths.dart';
 
 mixin ProfileScreenMixin on BaseViewState<ProfileScreen> {
   final ProfileBloc _profileBloc = ProfileBloc();
@@ -17,6 +18,12 @@ mixin ProfileScreenMixin on BaseViewState<ProfileScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      _profileBloc.add(ProfileInitAction());
+    });
+  }
+
+  void detailNavigation() {
+    context.push(RoutePaths.profileDetail).then<void>((value) async {
       _profileBloc.add(ProfileInitAction());
     });
   }

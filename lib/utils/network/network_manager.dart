@@ -62,7 +62,7 @@ class NetworkManager {
 
   Future<Response> post(
       String endpoint, {
-        Map<String, dynamic>? data,
+        dynamic data,
         Map<String, dynamic>? headers,
       }) async {
     try {

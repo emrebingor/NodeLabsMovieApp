@@ -3,9 +3,11 @@ part of '../profile_screen.dart';
 final class _UserInformationRowWidget extends StatelessWidget {
   const _UserInformationRowWidget({
     required this.user,
+    required this.onTap,
   });
 
   final User? user;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +66,7 @@ final class _UserInformationRowWidget extends StatelessWidget {
         const SizedBox(width: 10),
 
         InkWell(
-          onTap: () => context.push(RoutePaths.profileDetail),
+          onTap: onTap,
           child: Container(
             height: 36,
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 19),

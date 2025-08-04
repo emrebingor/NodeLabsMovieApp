@@ -49,6 +49,7 @@ final class _ProfileScreenState extends BaseViewState<ProfileScreen> with Profil
                   children: [
                     _UserInformationRowWidget(
                       user: state.userData,
+                      onTap: detailNavigation,
                     ),
 
                     const SizedBox(height: 29),

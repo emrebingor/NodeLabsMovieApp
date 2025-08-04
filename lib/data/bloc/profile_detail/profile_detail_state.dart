@@ -7,15 +7,18 @@ final class ProfileDetailState extends BaseBlocState {
     super.errorMessage,
     super.isLoading,
     this.selectedImage,
+    this.loginSuccess = false,
   });
 
   final File? selectedImage;
+  final bool loginSuccess;
 
   @override
   List<Object?> get props {
     return <Object?>[
       ...super.props,
-      selectedImage
+      selectedImage,
+      loginSuccess,
     ];
   }
 
@@ -24,12 +27,14 @@ final class ProfileDetailState extends BaseBlocState {
     bool? hasError,
     String? errorMessage,
     bool? isLoading,
+    bool? loginSuccess,
     File? selectedImage,
   }) {
     return ProfileDetailState(
       hasError: hasError ?? false,
       errorMessage: errorMessage ?? '',
       isLoading: isLoading ?? this.isLoading,
+      loginSuccess: loginSuccess ?? this.loginSuccess,
       selectedImage: selectedImage ?? this.selectedImage,
     );
   }
