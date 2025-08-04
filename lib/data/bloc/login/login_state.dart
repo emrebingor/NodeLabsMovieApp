@@ -7,12 +7,14 @@ final class LoginState extends BaseBlocState {
     super.isLoading,
     this.isRegister = false,
     this.loginSuccess = false,
-    this.obscureText = false,
+    this.obscureFirstPassword = false,
+    this.obscureSecondPassword = false,
   });
 
   final bool isRegister;
   final bool loginSuccess;
-  final bool obscureText;
+  final bool obscureFirstPassword;
+  final bool obscureSecondPassword;
 
   @override
   List<Object?> get props {
@@ -20,7 +22,8 @@ final class LoginState extends BaseBlocState {
       ...super.props,
       isRegister,
       loginSuccess,
-      obscureText,
+      obscureFirstPassword,
+      obscureSecondPassword,
     ];
   }
 
@@ -31,7 +34,8 @@ final class LoginState extends BaseBlocState {
     bool? isLoading,
     bool? isRegister,
     bool? loginSuccess,
-    bool? obscureText,
+    bool? obscureFirstPassword,
+    bool? obscureSecondPassword,
   }) {
     return LoginState(
       hasError: hasError ?? false,
@@ -39,7 +43,8 @@ final class LoginState extends BaseBlocState {
       isLoading: isLoading ?? this.isLoading,
       isRegister: isRegister ?? this.isRegister,
       loginSuccess: loginSuccess ?? this.loginSuccess,
-      obscureText: obscureText ?? this.obscureText,
+      obscureFirstPassword: obscureFirstPassword ?? this.obscureFirstPassword,
+      obscureSecondPassword: obscureSecondPassword ?? this.obscureSecondPassword,
     );
   }
 }

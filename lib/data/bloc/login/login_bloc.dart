@@ -19,8 +19,12 @@ final class LoginBloc extends BaseBloc<LoginAction, LoginState> {
     emit(state.copyWith(isRegister: !state.isRegister));
   }
 
-  void updateObscureTextStatus() {
-    emit(state.copyWith(obscureText: !state.obscureText));
+  void updateObscureFirstPassword() {
+    emit(state.copyWith(obscureFirstPassword: !state.obscureFirstPassword));
+  }
+
+  void updateObscureSecondPassword() {
+    emit(state.copyWith(obscureSecondPassword: !state.obscureSecondPassword));
   }
 
   Future<void> _registerUser(

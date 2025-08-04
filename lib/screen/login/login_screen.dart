@@ -67,8 +67,8 @@ final class _LoginScreenState extends BaseViewState<LoginScreen> with LoginScree
                       PasswordTextFieldWidget(
                         controller: passwordController,
                         hintText: 'Şifre',
-                        obscureText: state.obscureText,
-                        visibleOnTap: updateObscureTextStatus,
+                        obscureText: state.obscureFirstPassword,
+                        visibleOnTap: updateObscureFirstPassword,
                       ),
 
                       state.isRegister ? const SizedBox(height: 14) : SizedBox.shrink(),
@@ -76,8 +76,8 @@ final class _LoginScreenState extends BaseViewState<LoginScreen> with LoginScree
                       state.isRegister ? PasswordTextFieldWidget(
                         controller: secondPasswordController,
                         hintText: 'Şifre Tekrar',
-                        obscureText: state.obscureText,
-                        visibleOnTap: updateObscureTextStatus,
+                        obscureText: state.obscureSecondPassword,
+                        visibleOnTap: updateObscureSecondPassword,
                       ) : SizedBox.shrink(),
 
                       const SizedBox(height: 30),

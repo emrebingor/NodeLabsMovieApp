@@ -24,6 +24,7 @@ final class MovieDetailScreen extends StatefulWidget {
 }
 
 final class _MovieDetailScreenState extends BaseViewState<MovieDetailScreen> with MovieDetailScreenMixin {
+
   @override
   Widget build(BuildContext context) {
     final selectedMovie = context.read<SelectedMovieProvider>().selectedMovie;
@@ -50,8 +51,10 @@ final class _MovieDetailScreenState extends BaseViewState<MovieDetailScreen> wit
                         movie: selectedMovie,
                         isFavoriteSelected: state.isFavoriteSelected,
                         onTap: () {
-                          if(selectedMovie?.id != null) {
-                            addFavorite(selectedMovie!.id!);
+                          if(!(selectedMovie?.isFavorite ?? false)) {
+                            if(selectedMovie?.id != null) {
+                              addFavorite(selectedMovie!.id!);
+                            }
                           }
                         },
                       ),

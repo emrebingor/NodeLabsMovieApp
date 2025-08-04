@@ -132,7 +132,11 @@ mixin LoginScreenMixin on BaseViewState<LoginScreen> {
     _loginBloc.updateRegisterStatus();
   }
 
-  void updateObscureTextStatus() {
-    _loginBloc.updateObscureTextStatus();
+  void updateObscureFirstPassword() {
+    _loginBloc.updateObscureFirstPassword();
+  }
+
+  void updateObscureSecondPassword() {
+    _loginBloc.updateObscureSecondPassword();
   }
 }

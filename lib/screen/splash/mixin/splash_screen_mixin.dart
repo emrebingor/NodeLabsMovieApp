@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:node_labs_movie_app/screen/splash/splash_screen.dart';
 import 'package:node_labs_movie_app/core/base/state/base_view_state.dart';
 import 'package:node_labs_movie_app/core/navigation/route_paths.dart';

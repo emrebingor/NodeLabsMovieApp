@@ -6,7 +6,13 @@ import 'package:go_router/go_router.dart';
 import 'package:node_labs_movie_app/utils/extension/color_extension.dart';
 
 final class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
-  const AppBarWidget({super.key, required this.title, this.isActionVisible, this.actionOnTap, this.isLeadingVisible});
+  const AppBarWidget({
+    super.key,
+    required this.title,
+    this.isActionVisible,
+    this.actionOnTap,
+    this.isLeadingVisible,
+  });
   final String title;
   final bool? isActionVisible;
   final bool? isLeadingVisible;

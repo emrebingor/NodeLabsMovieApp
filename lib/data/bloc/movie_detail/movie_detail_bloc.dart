@@ -14,6 +14,10 @@ final class MovieDetailBloc extends BaseBloc<MovieDetailAction, MovieDetailState
     on<AddFavoriteAction>(_addFavorite);
   }
 
+  void updateFavoriteStatus(bool isFavoriteSelected) {
+    emit(state.copyWith(isFavoriteSelected: isFavoriteSelected));
+  }
+
   Future<void> _addFavorite(
       AddFavoriteAction event,
       Emitter<MovieDetailState> emit,

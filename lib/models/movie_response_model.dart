@@ -46,10 +46,12 @@ final class Movies {
     this.Actors,
     this.Plot,
     this.images,
+    this.isFavorite,
   });
 
   factory Movies.fromJson(Map<String, dynamic> json) => Movies(
     id: json['id'] is String ? json['id'] as String : null,
+    isFavorite: json['isFavorite'] is bool ? json['isFavorite'] as bool : null,
     Poster: json['Poster'] is String ? json['Poster'] as String : null,
     Title: json['Title'] is String ? json['Title'] as String : null,
     Year: json['Year'] is String ? json['Year'] as String : null,
@@ -62,6 +64,7 @@ final class Movies {
   );
 
   String? id;
+  bool? isFavorite;
   String? Poster;
   String? Title;
   String? Year;
@@ -75,6 +78,7 @@ final class Movies {
   Map<String, dynamic> toJson() => {
     'id': id,
     'Poster': Poster,
+    'isFavorite': isFavorite,
     'Title': Title,
     'Year': Year,
     'Director': Director,

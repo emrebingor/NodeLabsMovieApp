@@ -16,10 +16,18 @@ final class _UserInformationRowWidget extends StatelessWidget {
           width: 60,
           height: 60,
           child: ClipOval(
-            child: Image.network(
+            child: (user?.photoUrl?.isNotEmpty ?? false) ? Image.network(
               user?.photoUrl ?? '',
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) => Icon(Icons.person),
+            ) : Container(
+              color: ColorExtension.grey,
+              alignment: Alignment.center,
+              child: Icon(
+                Icons.person,
+                size: 30,
+                color: ColorExtension.white,
+              ),
             ),
           ),
         ),
