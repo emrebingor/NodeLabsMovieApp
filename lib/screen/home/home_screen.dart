@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:node_labs_movie_app/models/movie_response_model.dart';
 
+part './sub_screen/home_sub_screen.dart';
+
 final class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -28,24 +30,13 @@ final class _HomeScreenState extends BaseViewState<HomeScreen> with HomeScreenMi
         builder: (BuildContext context, HomeState state) {
           return Scaffold(
             body: SafeArea(
-              child: PaginationBuilder<Movies>(
-                source: state.movies ?? [],
-                isHaveMoreData: state.hasMoreData,
+              child: _MoviePaginationViewWidget(
+                movies: state.movies ?? [],
+                hasMoreData: state.hasMoreData,
                 paginationCallback: () async {
                   getMovies();
                 },
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                scroll: const BouncingScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 15,
-                  mainAxisSpacing: 15,
-                  childAspectRatio: 0.6,
-                ),
-                itemBuilder: (context, movie) => MovieInformationBoxWidget(
-                  movie: movie,
-                  onTap: () => detailNavigation(movie),
-                ),
+                onTap: (movie) => detailNavigation(movie),
               ),
             ),
           ).withLoading(state.isLoading);

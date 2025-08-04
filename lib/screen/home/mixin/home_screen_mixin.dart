@@ -16,7 +16,6 @@ mixin HomeScreenMixin on BaseViewState<HomeScreen> {
   @override
   void initState() {
     super.initState();
-
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _homeBloc.add(const HomeInitAction(false));
     });
