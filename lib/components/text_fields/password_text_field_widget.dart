@@ -41,7 +41,6 @@ final class PasswordTextFieldWidget extends StatelessWidget {
               obscureText: obscureText,
               style: TextStyle(color: ColorExtension.white),
               cursorColor: ColorExtension.white,
-              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 hintText: hintText,
                 hintStyle: TextStyle(color: ColorExtension.grey),
